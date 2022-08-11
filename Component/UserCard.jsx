@@ -5,6 +5,7 @@ import {
   IconMapPins,
 } from "@tabler/icons";
 import React, { useState } from "react";
+import UserCardDetail from "./UserCardDetail";
 
 export default function UserCard(props) {
   const [isTap, setIsTap] = useState(false);
@@ -23,23 +24,10 @@ export default function UserCard(props) {
           {isTap === false ? <IconChevronDown /> : <IconChevronUp />}
         </div>
       </div>
-
+      {}
       {isTap === false ? null : (
-        <div className="text-center">
-          <strong>
-            <IconMailForward />
-            {props.email}
-          </strong>
-          <br />
-          <strong>
-            {" "}
-            <IconMapPins />
-            {props.address}
-          </strong>
-        </div>
+        <UserCardDetail email={props.email} address={props.address} />
       )}
-
-      {/* details */}
     </div>
   );
 }
